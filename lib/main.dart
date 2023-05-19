@@ -10,12 +10,18 @@ class FlutterBasics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.black12,
         appBar: AppBar(
-          title: Text('Flutter Basics'),
-        ),
-        body: Center(
-          child: Text('Hello World'),
+          title: Center(child: Text('App Bar')),
+          foregroundColor: Colors.yellow,
+          backgroundColor: Colors.blueGrey[800],
+          shadowColor: Colors.amber,
+          elevation: 20,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
         ),
       ),
     );
