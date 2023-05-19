@@ -12,15 +12,14 @@ class FlutterBasics extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.black12,
-        appBar: AppBar(
-          title: Center(child: Text('App Bar')),
-          foregroundColor: Colors.yellow,
-          backgroundColor: Colors.blueGrey[800],
-          shadowColor: Colors.amber,
-          elevation: 20,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
+        body: Center(
+          child: Text(
+            'Hey! This is my text widget',
+            style: TextStyle(
+              fontSize: 30.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue,
+            ),
           ),
         ),
       ),
