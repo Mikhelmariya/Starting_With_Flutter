@@ -13,15 +13,17 @@ class FlutterBasics extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: Text(
-            'Hey! This is my text widget',
-            style: TextStyle(
-              fontSize: 30.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.blue,
-            ),
+            child: RichText(
+          text: TextSpan(
+            text: 'Hello ',
+            style: DefaultTextStyle.of(context).style,
+            children: <TextSpan>[
+              TextSpan(
+                  text: 'bold', style: TextStyle(fontWeight: FontWeight.bold)),
+              TextSpan(text: ' world!', style: TextStyle(color: Colors.red)),
+            ],
           ),
-        ),
+        )),
       ),
     );
   }
