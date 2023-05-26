@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter/src/widgets/navigator.dart';
+import 'package:flutter/rendering.dart';
+import 'package:starting_with_flutter/page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -17,43 +17,57 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.black,
         body: Center(
           child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
+            child: Column(
               children: [
                 SizedBox(
-                  width: 20,
+                  height: 50,
                 ),
-                Container(
-                  height: 100,
-                  width: 400,
-                  color: Colors.red,
-                  child: Center(
-                    child: Text("I'm a Container and 1st child of row",
-                        style: TextStyle(
-                            color: Colors.yellow,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold)),
-                  ),
+                Center(
+                  child: Text(
+                      "Text , TextStyle, Column , Row, Container,decoration,  Listview.builder , SingleChildscroll view , SizedBox, Padding",
+                      style: TextStyle(color: Colors.white, fontSize: 20)),
                 ),
                 SizedBox(
-                  width: 20,
+                  height: 50,
                 ),
-                Container(
-                  height: 100,
-                  width: 400,
-                  color: Colors.red,
-                  child: Center(
-                    child: Text("I'm a Container and 2nd child of row",
-                        style: TextStyle(
-                            color: Colors.yellow,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold)),
-                  ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 100, vertical: 10),
+                          child: Container(
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.ac_unit,
+                                  size: 30,
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                  'shrinkwrap: true',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ],
             ),
